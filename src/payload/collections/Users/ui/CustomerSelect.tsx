@@ -58,7 +58,7 @@ export const CustomerSelect: React.FC<TextField> = props => {
 
   return (
     <div>
-      <p style={{ marginBottom: '0' }}>{typeof label === 'string' ? label : 'Customer'}</p>
+      <p style={{ marginBottom: '0' }}>{typeof label === 'string' ? label : 'Patient'}</p>
       <p
         style={{
           marginBottom: '0.75rem',

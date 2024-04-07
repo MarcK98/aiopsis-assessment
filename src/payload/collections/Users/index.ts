@@ -50,15 +50,19 @@ const Users: CollectionConfig = {
       name: 'roles',
       type: 'select',
       hasMany: true,
-      defaultValue: ['customer'],
+      defaultValue: ['patient'],
       options: [
         {
           label: 'admin',
           value: 'admin',
         },
         {
-          label: 'customer',
-          value: 'customer',
+          label: 'doctor',
+          value: 'doctor',
+        },
+        {
+          label: 'patient',
+          value: 'patient',
         },
       ],
       hooks: {
@@ -139,6 +143,34 @@ const Users: CollectionConfig = {
         //     readOnly: true
         //   }
         // },
+      ],
+    },
+    {
+      label: 'Wishlist',
+      name: 'wishlist',
+      type: 'group',
+      fields: [
+        {
+          name: 'items',
+          label: 'Items',
+          type: 'array',
+          interfaceName: 'WishlistItems',
+          fields: [
+            {
+              name: 'product',
+              type: 'relationship',
+              relationTo: 'products',
+            },
+            {
+              name: 'createdOn',
+              label: 'Created On',
+              type: 'date',
+              admin: {
+                readOnly: true,
+              },
+            },
+          ],
+        },
       ],
     },
     {

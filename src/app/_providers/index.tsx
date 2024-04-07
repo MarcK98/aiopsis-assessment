@@ -4,6 +4,7 @@ import React from 'react'
 
 import { AuthProvider } from '../_providers/Auth'
 import { CartProvider } from '../_providers/Cart'
+import { WishlistProvider } from '../_providers/Wishlist'
 import { ThemeProvider } from './Theme'
 
 export const Providers: React.FC<{
@@ -12,7 +13,9 @@ export const Providers: React.FC<{
   return (
     <ThemeProvider>
       <AuthProvider>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          <WishlistProvider>{children}</WishlistProvider>
+        </CartProvider>
       </AuthProvider>
     </ThemeProvider>
   )

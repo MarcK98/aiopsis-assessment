@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { Product } from '../../../payload/payload-types'
 import { AddToCartButton } from '../../_components/AddToCartButton'
+import { AddToWishlistButton } from '../../_components/AddToWishlistButton'
 import { Gutter } from '../../_components/Gutter'
 import { Media } from '../../_components/Media'
 import { Message } from '../../_components/Message'
@@ -76,6 +77,7 @@ export const ProductHero: React.FC<{
           </div>
           <Price product={product} button={false} />
           <AddToCartButton product={product} className={classes.addToCartButton} />
+          <AddToWishlistButton product={product} className={classes.addToWishlistButton} />
         </div>
         <div className={classes.media}>
           <div className={classes.mediaWrapper}>
