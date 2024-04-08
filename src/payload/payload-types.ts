@@ -29,6 +29,7 @@ export interface Config {
     media: Media;
     categories: Category;
     users: User;
+    clinics: Clinic;
     redirects: Redirect;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -430,6 +431,14 @@ export interface User {
   loginAttempts?: number | null;
   lockUntil?: string | null;
   password: string | null;
+}
+export interface Clinic {
+  id: string;
+  name: string;
+  doctors?: (string | User)[] | null;
+  patients?: (string | User)[] | null;
+  updatedAt: string;
+  createdAt: string;
 }
 export interface Redirect {
   id: string;

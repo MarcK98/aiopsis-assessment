@@ -2,7 +2,7 @@ import type { CollectionConfig } from 'payload/types'
 
 import { admins } from '../../access/admins'
 import { adminsOrLoggedIn } from '../../access/adminsOrLoggedIn'
-import { adminsOrOrderedBy } from './access/adminsOrOrderedBy'
+import { adminsOrOrderedByOrManagedByDoctor } from './access/adminsOrOrderedByOrManagedByDoctor'
 import { clearUserCart } from './hooks/clearUserCart'
 import { populateOrderedBy } from './hooks/populateOrderedBy'
 import { updateUserPurchases } from './hooks/updateUserPurchases'
@@ -19,7 +19,7 @@ export const Orders: CollectionConfig = {
     afterChange: [updateUserPurchases, clearUserCart],
   },
   access: {
-    read: adminsOrOrderedBy,
+    read: adminsOrOrderedByOrManagedByDoctor,
     update: admins,
     create: adminsOrLoggedIn,
     delete: admins,
